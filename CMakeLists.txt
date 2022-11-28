@@ -2,15 +2,6 @@ cmake_minimum_required(VERSION 3.0)
 
 project(interception-tools)
 
-SET(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "C:\\Users\\MuraliR\\Downloads\\boost_1_81_0_b1\\boost_1_81_0\\boost")
-SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "C:\\Users\\MuraliR\\Downloads\\boost_1_81_0_b1\\boost_1_81_0\\libs")
-
-FIND_PACKAGE(Boost)
-IF (Boost_FOUND)
-    INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
-    ADD_DEFINITIONS( "-DHAS_BOOST" )
-ENDIF()
-
 find_package(Boost REQUIRED)
 find_package(Threads REQUIRED)
 

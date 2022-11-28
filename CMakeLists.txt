@@ -5,6 +5,12 @@ project(interception-tools)
 find_package(Boost REQUIRED)
 find_package(Threads REQUIRED)
 
+FIND_PACKAGE(Boost)
+IF (Boost_FOUND)
+    INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
+    ADD_DEFINITIONS( "-DHAS_BOOST" )
+ENDIF()
+
 find_package(PkgConfig)
 pkg_check_modules(LIBEVDEV REQUIRED libevdev)
 

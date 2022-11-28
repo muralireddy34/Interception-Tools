@@ -2,11 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 project(interception-tools)
 
-find_package(Boost REQUIRED)
-find_package(Threads REQUIRED)
-
 find_package(PkgConfig)
-pkg_check_modules(LIBEVDEV REQUIRED libevdev)
 
 add_executable(udevmon udevmon.cpp)
 target_include_directories(udevmon PRIVATE ${LIBEVDEV_INCLUDE_DIRS})
